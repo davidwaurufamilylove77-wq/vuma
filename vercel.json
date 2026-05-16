@@ -2,5 +2,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "framework": "vite",
-  "regions": ["cpt1"]
+  "regions": ["cpt1"],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
