@@ -6,9 +6,14 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
-    TanStackRouterVite(), // must be BEFORE react()
+    TanStackRouterVite(),
     react(),
     tailwindcss(),
     tsconfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      external: ['@tanstack/start-storage-context'],
+    },
+  },
 })
